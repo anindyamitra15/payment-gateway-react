@@ -31,7 +31,6 @@ const Donate = () => {
     alert(data.order.errorText);
   };
 
-
   const renderDropin = () => {
     if (orderToken === "") {
       alert("Order Token is empty");
@@ -60,10 +59,38 @@ const Donate = () => {
     console.log("after Initialisation");
   };
 
+  const changeTheme = () => {
+    setStyle({ theme: style.theme === "light" ? "dark" : "light" });
+    renderDropin();
+  };
+  //   setTimeout(() => {
+  //     renderDropin();
+  //   }, 300);
+
   return (
-    <div className="container">
-      <div id="gateway"></div>
-      <button onClick={()=>renderDropin()}>Pay</button>
+    <div
+      className="container"
+      style={{ display: "flex", justifyContent: "center", width: "80%" }}
+    >
+      <div
+        id="gateway"
+        style={{
+          marginTop: "5%",
+          maxHeight: "500px",
+          width: "500px",
+          overflowY: "auto",
+        }}
+      >
+        <button onClick={() => renderDropin()}>Pay</button>
+      </div>
+      <div className="button" style={{ display: "flex", alignItems: "center" }}>
+        <button
+          onClick={changeTheme}
+          style={{ height: "30px", margin: "10px" }}
+        >
+          {style.theme}
+        </button>
+      </div>
     </div>
   );
 };
