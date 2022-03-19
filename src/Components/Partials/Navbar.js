@@ -7,8 +7,12 @@ const Navbar = () => {
       <div className="container">
         <a className="left brand-logo">Payment Gateway</a>
         <ul className="right">
-          <li><NavLink to="/">Home</NavLink></li>      
-          <li><NavLink to="/donate">Donate</NavLink></li>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/donate">Donate</NavLink>
+          </li>
         </ul>
       </div>
     </nav>
